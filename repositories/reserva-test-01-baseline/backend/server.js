@@ -1,10 +1,24 @@
 import express from 'express';
 import cors from 'cors';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { initDatabase, db } from './database.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const frontendDistPath = path.resolve(__dirname, '../frontend/dist');
 
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use(express.static(frontendDistPath));
+app.get('*', (req, res, next) => {
+  if (req.path === '/api' || req.path.startsWith('/api/')) return next();
+
+  res.sendFile(path.join(frontendDistPath, 'index.html'), (error) => {
+    if (error) next(error);
+  });
+});
 
 // Listar Hosts
 app.get('/api/hosts', (req, res) => {

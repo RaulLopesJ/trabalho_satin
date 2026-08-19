@@ -15,11 +15,11 @@ function App() {
   const tutorId = 1; // Simulado
 
   useEffect(() => {
-    fetch('http://localhost:3001/api/hosts')
+    fetch('/api/hosts')
       .then(res => res.json())
       .then(data => { setHosts(data); if (data.length) setSelectedHost(data[0].id); });
 
-    fetch('http://localhost:3001/api/pets?tutorId=' + tutorId)
+    fetch('/api/pets?tutorId=' + tutorId)
       .then(res => res.json())
       .then(data => { setPets(data); if (data.length) setSelectedPet(data[0].id); });
 
@@ -27,7 +27,7 @@ function App() {
   }, []);
 
   const loadReservations = () => {
-    fetch('http://localhost:3001/api/reservations?tutorId=' + tutorId)
+    fetch('/api/reservations?tutorId=' + tutorId)
       .then(res => res.json())
       .then(data => setReservations(data));
   };
@@ -42,7 +42,7 @@ function App() {
       return;
     }
 
-    fetch('http://localhost:3001/api/reservations', {
+    fetch('/api/reservations', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -73,7 +73,7 @@ function App() {
 
   const handleCancelar = (id) => {
     setMessage(null);
-    fetch(`http://localhost:3001/api/reservations/${id}/cancel`, {
+    fetch(`/api/reservations/${id}/cancel`, {
       method: 'POST'
     })
     .then(async res => {

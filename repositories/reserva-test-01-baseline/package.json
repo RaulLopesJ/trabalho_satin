@@ -4,12 +4,14 @@
   "private": true,
   "description": "Aplicação de reservas Hospetse — test-01 baseline",
   "workspaces": [
-    "backend"
+    "backend",
+    "frontend"
   ],
   "engines": {
     "node": ">=18"
   },
   "scripts": {
+    "build": "npm --workspace frontend run build",
     "start": "npm --workspace backend start"
   }
 }
