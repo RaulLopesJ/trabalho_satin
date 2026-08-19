@@ -1,0 +1,14 @@
+{
+  "test_id": "T03",
+  "run_id": "20260819-1130-raul",
+  "model_api_id": "Gemini 3.7 Flash",
+  "source_file": "response.json",
+  "usageMetadata": {
+    "promptTokenCount": null,
+    "candidatesTokenCount": null,
+    "totalTokenCount": null,
+    "thoughtsTokenCount": null
+  },
+  "tokens_confirmed_from_provider": false,
+  "notes": "Os valores de tokens não foram preenchidos porque a execução foi feita interativamente pelo CLI. Os campos foram mantidos como null conforme especificado no modelo de metadados."
+}
