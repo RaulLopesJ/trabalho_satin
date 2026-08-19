@@ -1,0 +1,14 @@
+{
+  "test_id": "T01",
+  "run_id": "20260819-0218-raul",
+  "model_api_id": "gemini-1.5-flash",
+  "source_file": "response.json",
+  "usageMetadata": {
+    "promptTokenCount": null,
+    "candidatesTokenCount": null,
+    "totalTokenCount": null,
+    "thoughtsTokenCount": null
+  },
+  "tokens_confirmed_from_provider": false,
+  "notes": "Preencha os valores nulos acima com os números exibidos na captura de tela do seu comando /status session."
+}

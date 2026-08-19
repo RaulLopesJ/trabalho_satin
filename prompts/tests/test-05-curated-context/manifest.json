@@ -1,0 +1,21 @@
+{
+  "test_id": "T05",
+  "name": "curated-context",
+  "purpose": "Medir qualidade e economia usando somente contexto relevante",
+  "model_display_name": "Gemini 3.7 Flash",
+  "model_api_id": "TO_BE_CONFIRMED_IN_GOOGLE_AI_STUDIO",
+  "generation_config": {
+    "temperature": 0.2,
+    "topP": 0.95,
+    "seed": null
+  },
+  "system_prompt_version": "reservation-system-v1",
+  "task_version": "reservation-vertical-slice-v1",
+  "context_variant": "curated",
+  "technique": "none",
+  "output_contract_version": "output-contract-v1",
+  "output_repository": "reserva-test-05-curated-context",
+  "responsible": "TO_BE_FILLED",
+  "execution_status": "not_executed",
+  "comparison_pairs": ["T04"]
+}

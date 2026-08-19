@@ -1,0 +1,14 @@
+{
+  "test_id": "T0X",
+  "run_id": "YYYYMMDD-HHMM-integrante",
+  "model_api_id": "REPLACE_WITH_EXACT_API_MODEL_ID",
+  "source_file": "response.json",
+  "usageMetadata": {
+    "promptTokenCount": null,
+    "candidatesTokenCount": null,
+    "totalTokenCount": null,
+    "thoughtsTokenCount": null
+  },
+  "tokens_confirmed_from_provider": false,
+  "notes": "Do not replace unavailable values with zero. Preserve the raw response and explain missing fields."
+}

@@ -1,0 +1,27 @@
+{
+  "test_id": "T0X",
+  "run_id": "YYYYMMDD-HHMM-integrante",
+  "executed_at_utc": "YYYY-MM-DDTHH:MM:SSZ",
+  "provider": "Google AI Studio / Gemini API",
+  "model_display_name": "Gemini 3.7 Flash",
+  "model_api_id": "REPLACE_WITH_EXACT_API_MODEL_ID",
+  "generation_config": {
+    "temperature": 0.2,
+    "topP": 0.95,
+    "seed": null,
+    "maxOutputTokens": null
+  },
+  "system_instruction": "PASTE_EXACT_SYSTEM_INSTRUCTION_WITHOUT_SECRETS",
+  "contents": [
+    {
+      "role": "user",
+      "parts": [
+        {
+          "text": "PASTE_EXACT_USER_MESSAGE_FROM_ASSEMBLED_PROMPT"
+        }
+      ]
+    }
+  ],
+  "api_key_included": false,
+  "response_file": "response.json"
+}
