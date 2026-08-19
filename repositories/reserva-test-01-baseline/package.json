@@ -1,0 +1,15 @@
+{
+  "name": "reserva-test-01-baseline",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Aplicação de reservas Hospetse — test-01 baseline",
+  "workspaces": [
+    "backend"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "npm --workspace backend start"
+  }
+}

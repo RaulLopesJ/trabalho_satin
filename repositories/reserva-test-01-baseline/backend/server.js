@@ -106,7 +106,7 @@ app.post('/api/reservations/:id/cancel', (req, res) => {
 });
 
 // Inicializar banco e depois escutar
-const PORT = 3001;
+const PORT = Number(process.env.PORT) || 3001;
 initDatabase().then(() => {
   app.listen(PORT, () => {
     console.log(`Servidor rodando na porta ${PORT}`);
