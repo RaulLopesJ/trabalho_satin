@@ -1,0 +1,31 @@
+{
+  "test_id": "T06",
+  "name": "railway-deployment",
+  "purpose": "Gerar uma vertical slice da reserva de hospedagem com artefatos de raiz e configuração verificável para deploy no Railway",
+  "model_display_name": "Gemini 3.7 Flash",
+  "model_api_id": "TO_BE_CONFIRMED_IN_GOOGLE_AI_STUDIO",
+  "generation_config": {
+    "temperature": 0.2,
+    "topP": 0.95,
+    "seed": null
+  },
+  "system_prompt_version": "reservation-system-v1",
+  "deployment_context_version": "deployment-railway-v1",
+  "task_version": "reservation-vertical-slice-railway-v1",
+  "context_variant": "detailed-domain-plus-railway-failure",
+  "technique": "deployment-contract",
+  "output_contract_version": "output-contract-v2",
+  "output_repository": "reserva-test-06-railway-deployment",
+  "responsible": "TO_BE_FILLED",
+  "execution_status": "not_executed",
+  "comparison_pairs": [],
+  "deployment": {
+    "required": true,
+    "platform": "Railway",
+    "topology": "single-service-monorepo",
+    "config_file": "railway.json",
+    "start_script": "start.sh",
+    "healthcheck_path": "/health",
+    "source_branch": "TO_BE_FILLED"
+  }
+}

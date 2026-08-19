@@ -15,7 +15,7 @@
   "technique": "few-shot",
   "output_contract_version": "output-contract-v1",
   "output_repository": "reserva-test-02-few-shot",
-  "responsible": "TO_BE_FILLED",
-  "execution_status": "not_executed",
+  "responsible": "raul",
+  "execution_status": "executed",
   "comparison_pairs": ["T01"]
 }

@@ -1,14 +1,14 @@
 # Experimento de engenharia de prompts — reserva de hospedagem
 
-Este repositório controla cinco testes históricos de prompt usados para gerar uma vertical slice de reserva de hospedagem para pets e uma extensão T06 dedicada à deployabilidade no Railway.
+Este repositório controla os cinco testes de prompt usados para gerar, em repositórios separados, uma vertical slice de reserva de hospedagem para pets.
 
-## Escopo histórico
+## Escopo
 
 - Casos de uso: HPET04 — Solicitar Reserva e HPET04a — Cancelar Reserva/Solicitação.
 - Stack solicitada: Node.js, React e SQLite.
 - Modelo informado pelo grupo: Gemini 3.7 Flash. O identificador real usado pela API precisa ser confirmado no Google AI Studio e registrado em todos os manifests/runs.
-- System prompt histórico: `shared/system/reservation-system-v1.md`.
-- Contrato histórico: `shared/output/output-contract-v1.md`.
+- System prompt comum: `shared/system/reservation-system-v1.md`.
+- Contrato de saída comum: `shared/output/output-contract-v1.md`.
 
 ## Como executar um teste
 
@@ -43,21 +43,13 @@ Não sobrescreva uma execução. Se o prompt ou a configuração mudar, crie um 
 - T03: contexto mínimo + raciocínio estruturado com resumo verificável.
 - T04: contexto integral disponível.
 - T05: somente contexto relevante de HPET04/HPET04a.
-- T06: contrato de deploy Railway; não é comparação histórica de técnica/contexto.
 
-## Extensão T06 — Railway
+## Regra de validade
 
-T06 usa `shared/domain/deployment-railway-v1.md` e `shared/output/output-contract-v2.md`. A saída deve gerar uma aplicação autocontida com `package.json`, `start.sh`, `railway.json`, `.gitignore`, backend, frontend e README na raiz. O modelo deve consumir `process.env.PORT`, expor `/health`, evitar `localhost` fixo no frontend e fornecer um JSON Railway válido.
-
-A configuração Railway é separada da execução da IA: `railway-config-template.json` é um modelo de `railway.json`, enquanto `request.json`, `response.json` e `usage.json` continuam sendo evidências da chamada ao modelo.
-
-## Regra de comparação
-
-T01, T02 e T03 usam o mesmo contexto mínimo; apenas a técnica muda. T04 e T05 usam a mesma tarefa e o mesmo contrato; somente o contexto muda. Não misture T06 com essas comparações: ele usa contrato v2 e requisito adicional de deploy.
+T01/T02/T03 permitem comparar técnicas porque mantêm o contexto mínimo e a tarefa. T04/T05 permitem comparar curadoria porque mantêm system prompt, tarefa, stack, contrato, modelo e configurações, alterando apenas o contexto. Não compare resultados se qualquer uma dessas condições tiver mudado sem registrar a mudança.
 
 ## Segurança
 
 - Nunca versionar API keys, tokens, `.env` ou dados pessoais reais.
 - O arquivo `gemini-response.json` existente registra apenas `API_KEY_INVALID`; ele não é evidência de uma chamada válida nem deve ser usado para inventar tokens/custos.
 - Não coloque credenciais nos arquivos `request.json`.
-- Não declare deploy sem log, URL e healthcheck comprováveis.

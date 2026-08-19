@@ -1,0 +1,14 @@
+{
+  "test_id": "T02",
+  "run_id": "20260819-0941-raul",
+  "model_api_id": "gemini-3.7-flash",
+  "source_file": "output.md",
+  "usageMetadata": {
+    "promptTokenCount": null,
+    "candidatesTokenCount": null,
+    "totalTokenCount": null,
+    "thoughtsTokenCount": null
+  },
+  "tokens_confirmed_from_provider": false,
+  "notes": "Tokens to be filled from /status session output."
+}
